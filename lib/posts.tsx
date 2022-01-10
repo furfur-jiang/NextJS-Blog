@@ -1,6 +1,6 @@
 import fs from 'fs'
-import path from 'path'
 import matter from 'gray-matter'
+import path from 'path'
 import remark from 'remark'
 import html from 'remark-html'
 
@@ -26,13 +26,16 @@ export function getSortedPostsData() {
             ...matterResult.data
         }
     })
+    // console.log(allPostsData)
     // Sort posts by date
     return allPostsData.sort((a, b) => {
+        // console.log(a,b)
         if (a.date < b.date) {
             return 1
         } else {
             return -1
         }
+        // return -1
     })
 }
 // export async function getAllPostIds() {
